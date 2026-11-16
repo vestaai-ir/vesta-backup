@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-label="Back up your Odoo database, download it and keep it in your pocket">
+  <title>Vesta Backup: back up, download, keep it in your pocket</title>
+  <defs>
+    <linearGradient id="fire" gradientUnits="userSpaceOnUse" x1="0" y1="200" x2="0" y2="70">
+      <stop offset="0" stop-color="#5b3cc4"/><stop offset=".55" stop-color="#ea3a2e"/><stop offset="1" stop-color="#fbb945"/>
+    </linearGradient>
+    <linearGradient id="fireH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbb945"/><stop offset=".5" stop-color="#ea3a2e"/><stop offset="1" stop-color="#5b3cc4"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#5b3cc4"/><stop offset=".55" stop-color="#ea3a2e"/><stop offset="1" stop-color="#fbb945"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx=".9" cy="0" r=".7"><stop offset="0" stop-color="#ea3a2e" stop-opacity=".38"/><stop offset="1" stop-color="#ea3a2e" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowB" cx="0" cy="1" r=".6"><stop offset="0" stop-color="#5b3cc4" stop-opacity=".35"/><stop offset="1" stop-color="#5b3cc4" stop-opacity="0"/></radialGradient>
+    <linearGradient id="denim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a6ea5"/><stop offset="1" stop-color="#244a73"/>
+    </linearGradient>
+    <linearGradient id="denimFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4a82bd"/><stop offset="1" stop-color="#2d5a8a"/>
+    </linearGradient>
+    <pattern id="twill" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="6" height="6" fill="none"/><line x1="0" y1="0" x2="0" y2="6" stroke="#ffffff" stroke-opacity=".07" stroke-width="2"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1200" height="520" rx="28"/></clipPath>
+  </defs>
+
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .anim { animation-duration: 9s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+    .scale { transform-box: fill-box; transform-origin: center; }
+
+    /* Headline: one stage at a time */
+    .w1 { animation-name: w1; } .w2 { animation-name: w2; } .w3 { animation-name: w3; }
+    @keyframes w1 { 0%, 31% { fill: #ffffff; } 34%, 100% { fill: #4b5060; } }
+    @keyframes w2 { 0%, 32% { fill: #4b5060; } 35%, 61% { fill: #ffffff; } 64%, 100% { fill: #4b5060; } }
+    @keyframes w3 { 0%, 62% { fill: #4b5060; } 65%, 95% { fill: #fbb945; } 98%, 100% { fill: #4b5060; } }
+
+    /* Server card */
+    .btn-backup { animation-name: btnBackup; }
+    @keyframes btnBackup { 0%, 9% { opacity: 1; transform: scale(1); } 10% { opacity: 1; transform: scale(.94); } 11.5% { opacity: 1; transform: scale(1); }
+      14%, 96% { opacity: 0; transform: scale(1); } 99%, 100% { opacity: 1; transform: scale(1); } }
+    .progress { animation-name: progress; }
+    @keyframes progress { 0%, 12% { opacity: 0; } 14%, 32% { opacity: 1; } 35%, 100% { opacity: 0; } }
+    .bar { animation-name: bar; transform-box: fill-box; transform-origin: left center; }
+    @keyframes bar { 0%, 14% { transform: scaleX(0); } 32%, 100% { transform: scaleX(1); } }
+    .btn-download { animation-name: btnDownload; }
+    @keyframes btnDownload { 0%, 33% { opacity: 0; transform: scale(.8); } 36% { opacity: 1; transform: scale(1.04); } 38% { opacity: 1; transform: scale(1); }
+      39.5% { transform: scale(.94); } 41% { transform: scale(1); } 94% { opacity: 1; } 97%, 100% { opacity: 0; transform: scale(1); } }
+    .st1 { animation-name: st1; } .st2 { animation-name: st2; } .st3 { animation-name: st3; }
+    @keyframes st1 { 0%, 11% { opacity: 1; } 13%, 96% { opacity: 0; } 99%, 100% { opacity: 1; } }
+    @keyframes st2 { 0%, 12% { opacity: 0; } 14%, 31% { opacity: 1; } 33%, 100% { opacity: 0; } }
+    @keyframes st3 { 0%, 32% { opacity: 0; } 35%, 94% { opacity: 1; } 97%, 100% { opacity: 0; } }
+    .db-glow { animation-name: dbGlow; }
+    @keyframes dbGlow { 0%, 13% { opacity: 0; } 18% { opacity: .9; } 23% { opacity: .35; } 28% { opacity: .9; } 34%, 100% { opacity: 0; } }
+
+    /* Cursor */
+    .cursor { animation-name: cursor; }
+    @keyframes cursor {
+      0% { opacity: 0; transform: translate(560px, 500px); }
+      3% { opacity: 1; transform: translate(540px, 480px); }
+      9% { opacity: 1; transform: translate(252px, 412px) scale(1); }
+      10% { transform: translate(252px, 412px) scale(.82); }
+      11.5% { transform: translate(252px, 412px) scale(1); }
+      18%, 29% { transform: translate(400px, 480px); }
+      37.5% { transform: translate(252px, 412px) scale(1); }
+      39.5% { transform: translate(252px, 412px) scale(.82); }
+      41% { opacity: 1; transform: translate(252px, 412px) scale(1); }
+      47% { opacity: 1; transform: translate(430px, 488px); }
+      51%, 100% { opacity: 0; transform: translate(430px, 488px); }
+    }
+
+    /* The zip file flies into the pocket */
+    .file { animation-name: file; }
+    @keyframes file {
+      0%, 41% { opacity: 0; transform: translate(250px, 300px) scale(.3); }
+      45% { opacity: 1; transform: translate(250px, 222px) scale(1.04); }
+      49% { opacity: 1; transform: translate(250px, 214px) scale(1); }
+      56% { transform: translate(470px, 166px) rotate(-7deg) scale(.96); }
+      63% { transform: translate(712px, 160px) rotate(5deg) scale(.93); }
+      70% { transform: translate(925px, 192px) rotate(11deg) scale(.9); }
+      75.5% { transform: translate(965px, 256px) rotate(-3deg) scale(.88); }
+      78.5% { transform: translate(965px, 236px) rotate(1deg) scale(.88); }
+      81%, 93% { opacity: 1; transform: translate(965px, 242px) rotate(0deg) scale(.88); }
+      97%, 100% { opacity: 0; transform: translate(965px, 242px) rotate(0deg) scale(.88); }
+    }
+    .trail { animation-name: trail; stroke-dasharray: 820; }
+    @keyframes trail { 0%, 49% { stroke-dashoffset: 820; opacity: 0; } 50% { opacity: .55; } 72% { stroke-dashoffset: 0; opacity: .55; } 80%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+
+    /* Pocket */
+    .pocket { animation-name: pocket; }
+    @keyframes pocket { 0%, 75% { transform: scale(1); } 77.5% { transform: scale(1.045, .97); } 80% { transform: scale(.985, 1.02); } 83%, 100% { transform: scale(1); } }
+    .badge { animation-name: badge; }
+    @keyframes badge { 0%, 79% { opacity: 0; transform: scale(.6); } 83% { opacity: 1; transform: scale(1.06); } 85%, 94% { opacity: 1; transform: scale(1); } 97%, 100% { opacity: 0; transform: scale(1); } }
+
+    @media (prefers-reduced-motion: reduce) { .anim { animation-play-state: paused; animation-delay: -7.5s; } }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="520" fill="#111318"/>
+    <rect width="1200" height="520" fill="url(#glowA)"/>
+    <rect width="1200" height="520" fill="url(#glowB)"/>
+
+    <!-- Headline -->
+    <text x="600" y="72" text-anchor="middle" font-size="38" font-weight="800" letter-spacing="-.5">
+      <tspan class="anim w1">Back up.</tspan>
+      <tspan class="anim w2" dx="10">Download.</tspan>
+      <tspan class="anim w3" dx="10">Keep it in your pocket.</tspan>
+    </text>
+
+    <!-- Odoo card -->
+    <g transform="translate(90 150)">
+      <rect width="320" height="300" rx="22" fill="#1b1e27" stroke="#2c303c" stroke-width="2"/>
+      <rect x="18" y="18" width="34" height="34" rx="9" fill="#111318" stroke="url(#fireH)" stroke-width="2"/>
+      <g transform="translate(23 22) scale(.24)">
+        <path d="M50 62 C45 48 38 30 30 4 C16 24 17 46 22 66 C26 85 38 96 50 96 C63 96 76 86 78 68 C80 52 77 38 82 18 C68 30 57 44 50 62Z" fill="url(#mark)"/>
+        <circle cx="50" cy="33" r="7.5" fill="#fbb945"/>
+      </g>
+      <text x="64" y="41" font-size="18" font-weight="700" fill="#ffffff">Vesta Backup</text>
+      <text x="300" y="41" font-size="13" fill="#8a90a0" text-anchor="end">Odoo 20</text>
+
+      <!-- Database -->
+      <ellipse class="anim db-glow" cx="160" cy="140" rx="96" ry="72" fill="#ea3a2e" opacity="0" style="filter: blur(18px)"/>
+      <g fill="none" stroke="url(#fire)" stroke-width="7" stroke-linecap="round">
+        <ellipse cx="160" cy="88" rx="62" ry="17" fill="#111318"/>
+        <path d="M98 88 V176 A62 17 0 0 0 222 176 V88"/>
+        <path d="M98 117 A62 17 0 0 0 222 117" opacity=".55"/>
+        <path d="M98 147 A62 17 0 0 0 222 147" opacity=".55"/>
+      </g>
+
+      <!-- Status line -->
+      <text class="anim st1" x="160" y="222" font-size="15" fill="#8a90a0" text-anchor="middle">Database + files · ready</text>
+      <text class="anim st2" x="160" y="222" font-size="15" fill="#fbb945" text-anchor="middle" opacity="0">Backing up…</text>
+      <text class="anim st3" x="160" y="222" font-size="15" fill="#4cd486" text-anchor="middle" opacity="0">✓ 1.19 GB · SHA-256 verified</text>
+
+      <!-- Backup Now -->
+      <g class="anim scale btn-backup">
+        <rect x="40" y="240" width="240" height="42" rx="10" fill="#714b67"/>
+        <text x="160" y="267" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">▶  Backup Now</text>
+      </g>
+      <!-- Progress -->
+      <g class="anim progress" opacity="0">
+        <rect x="40" y="255" width="240" height="12" rx="6" fill="#2c303c"/>
+        <rect class="anim bar" x="40" y="255" width="240" height="12" rx="6" fill="url(#fireH)"/>
+      </g>
+      <!-- Download -->
+      <g class="anim scale btn-download" opacity="0">
+        <rect x="40" y="240" width="240" height="42" rx="10" fill="url(#fireH)"/>
+        <text x="160" y="267" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">⬇  Download</text>
+      </g>
+    </g>
+
+    <!-- Flight path -->
+    <path class="anim trail" d="M250 214 C 430 130, 760 120, 965 240" fill="none" stroke="#fbb945" stroke-width="3" stroke-linecap="round" stroke-dasharray="820" stroke-dashoffset="820" opacity="0"/>
+
+    <!-- Jeans -->
+    <g>
+      <rect x="770" y="150" width="400" height="400" rx="26" fill="url(#denim)"/>
+      <rect x="770" y="150" width="400" height="400" rx="26" fill="url(#twill)"/>
+      <path d="M770 176 H1170" stroke="#e0a84a" stroke-width="2" stroke-dasharray="7 6" opacity=".75"/>
+      <path d="M770 186 H1170" stroke="#e0a84a" stroke-width="2" stroke-dasharray="7 6" opacity=".75"/>
+      <!-- pocket opening shadow -->
+      <path d="M842 252 H1088" stroke="#16314f" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+    <!-- The file (between the jeans and the pocket front) -->
+    <g class="anim file" opacity="0">
+      <g transform="translate(-82 -40)">
+        <rect width="164" height="80" rx="12" fill="#ffffff"/>
+        <rect x="12" y="13" width="40" height="54" rx="7" fill="url(#fireH)"/>
+        <text x="32" y="46" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">ZIP</text>
+        <text x="62" y="35" font-size="13" font-weight="700" fill="#111318">vesta_1116.zip</text>
+        <text x="62" y="55" font-size="13" fill="#6b7080">1.19 GB</text>
+      </g>
+    </g>
+
+    <!-- Pocket front -->
+    <g class="anim scale pocket">
+      <path d="M842 252 H1088 V398 L965 466 L842 398 Z" fill="url(#denimFront)"/>
+      <path d="M842 252 H1088 V398 L965 466 L842 398 Z" fill="url(#twill)"/>
+      <path d="M852 262 H1078 V392 L965 454 L852 392 Z" fill="none" stroke="#e0a84a" stroke-width="2.2" stroke-dasharray="8 6"/>
+      <path d="M860 270 H1070 V387 L965 445 L860 387 Z" fill="none" stroke="#e0a84a" stroke-width="2.2" stroke-dasharray="8 6" opacity=".8"/>
+      <path d="M895 330 Q 930 300 965 330 Q 1000 360 1035 330" fill="none" stroke="#e0a84a" stroke-width="2.2" stroke-dasharray="8 6" opacity=".8"/>
+      <circle cx="852" cy="262" r="6" fill="#c98a3b" stroke="#8a5a22" stroke-width="2"/>
+      <circle cx="1078" cy="262" r="6" fill="#c98a3b" stroke="#8a5a22" stroke-width="2"/>
+    </g>
+
+    <!-- Badge -->
+    <g class="anim scale badge" opacity="0">
+      <rect x="860" y="474" width="210" height="34" rx="17" fill="#1f8a4c"/>
+      <text x="965" y="497" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">✓ Safe in your pocket</text>
+    </g>
+
+    <!-- Cursor -->
+    <g class="anim cursor" opacity="0">
+      <path d="M0 0 L0 24 L6.5 18.5 L11 28 L15.5 26 L11 16.5 L19.5 16.5 Z" fill="#ffffff" stroke="#111318" stroke-width="1.6" stroke-linejoin="round"/>
+    </g>
+  </g>
+</svg>

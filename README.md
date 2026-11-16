@@ -29,6 +29,10 @@ No cron scripts, no SSH, no forgetting. Open the app, see at a glance which dest
 press **Backup Now** whenever you are about to do something risky.
 
 <p align="center">
+  <img src="vesta_backup/static/description/pocket.svg" alt="Animation: click Backup Now, download the zip and drop it into your pocket" width="100%">
+</p>
+
+<p align="center">
   <b>Works with</b><br><br>
   <img src="vesta_backup/static/description/providers_en.png" alt="MinIO, AWS, DigitalOcean, Liara, ParsPack, Hamravesh and any S3-compatible storage" width="100%">
 </p>
