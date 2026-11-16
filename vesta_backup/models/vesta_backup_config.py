@@ -33,7 +33,7 @@ class VestaBackupConfig(models.Model):
         required=True,
         default="s3",
         tracking=True,
-        help="S3: any S3-compatible storage (Amazon S3, MinIO, ArvanCloud, Cloudflare R2, Wasabi, ...).\n"
+        help="S3: any S3-compatible storage (MinIO, AWS, DigitalOcean, Liara, ParsPack, Hamravesh, ArvanCloud, ...).\n"
         "Server Disk: keep the backups on this server, to download them to your computer.",
     )
     backup_format = fields.Selection(

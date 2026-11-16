@@ -1,12 +1,12 @@
 <p align="center">
-  <img src="vesta_backup/static/description/banner.png" alt="Vesta Backup: scheduled backups for Odoo 20 to MinIO, Amazon S3, ArvanCloud or the server disk" width="100%">
+  <img src="vesta_backup/static/description/banner.png" alt="Vesta Backup: scheduled backups for Odoo 20 to MinIO, AWS, DigitalOcean, Liara, ParsPack, Hamravesh or any S3" width="100%">
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Odoo-20.0-714B67?style=for-the-badge" alt="Odoo 20.0">
   <img src="https://img.shields.io/badge/license-LGPL--3-5b3cc4?style=for-the-badge" alt="LGPL-3">
   <img src="https://img.shields.io/badge/tests-17%20passing-2ea44f?style=for-the-badge" alt="17 tests passing">
-  <img src="https://img.shields.io/badge/S3-MinIO%20·%20AWS%20·%20ArvanCloud%20·%20R2-1d8fd8?style=for-the-badge" alt="S3 compatible">
+  <img src="https://img.shields.io/badge/S3-any%20compatible%20storage-ea3a2e?style=for-the-badge" alt="Any S3-compatible storage">
 </p>
 
 <p align="center">
@@ -21,12 +21,17 @@
 ## Never lose an Odoo database again
 
 **Vesta Backup** backs up your Odoo 20 database **and** its files every night, every week or every hour, to
-the storage *you* own: a MinIO on your own network, Amazon S3, ArvanCloud, Cloudflare R2, Wasabi, or the
-server's own disk. Old backups are pruned for you, every file is checksummed, and any backup is one click
+the storage *you* own: a MinIO on your own network, AWS S3, DigitalOcean Spaces, Liara, ParsPack,
+Hamravesh, ArvanCloud, Cloudflare R2 or any other S3-compatible storage, or the server's own disk. Old backups are pruned for you, every file is checksummed, and any backup is one click
 away from your laptop.
 
 No cron scripts, no SSH, no forgetting. Open the app, see at a glance which destinations are healthy, and
 press **Backup Now** whenever you are about to do something risky.
+
+<p align="center">
+  <b>Works with</b><br><br>
+  <img src="vesta_backup/static/description/providers_en.png" alt="MinIO, AWS, DigitalOcean, Liara, ParsPack, Hamravesh and any S3-compatible storage" width="100%">
+</p>
 
 <p align="center">
   <img src="vesta_backup/static/description/screenshots/destinations_en.jpg" alt="Every destination on one screen: last backup, next backup, stored size, retention and the last 14 runs" width="100%">
@@ -38,7 +43,7 @@ press **Backup Now** whenever you are about to do something risky.
 |---|---|
 | 🗄️ **Database and files, separately** | A compressed `pg_dump` (`.dump`), the filestore as `.tar.gz` and a manifest. Restore just the database, or just the attachments. |
 | 📦 **Or one Odoo zip** | The exact format of the Odoo database manager: restore it from `/web/database/manager` in two clicks. |
-| ☁️ **Any S3, including your own MinIO** | Amazon S3, MinIO, ArvanCloud, Cloudflare R2, Wasabi, Backblaze B2… Path or virtual-host addressing, your own endpoint. |
+| ☁️ **Any S3, including your own MinIO** | MinIO, AWS S3, DigitalOcean Spaces, Liara, ParsPack, Hamravesh, ArvanCloud, Cloudflare R2, Wasabi… Your own endpoint, path or virtual-host addressing. |
 | ⏰ **One schedule per destination** | Nightly to MinIO, weekly offsite to ArvanCloud, monthly archive to S3: as many destinations as you need. |
 | ♻️ **Retention that can't bite you** | Keep the last *N* backups and/or *N* days. The most recent backup is never deleted. |
 | ⬇️ **One-click download** | Stream any backup through Odoo (works with a private MinIO), or hand out a short-lived signed link. |
@@ -105,7 +110,7 @@ Zip backup: **Restore Database** in `/web/database/manager`, or `odoo db load ne
 
 <h3 id="faq">FAQ</h3>
 
-<details><summary><b>Does it work with ArvanCloud, ParsPack or another Iranian object storage?</b></summary>
+<details><summary><b>Does it work with Liara, ParsPack, Hamravesh, ArvanCloud or another Iranian object storage?</b></summary>
 
 Yes. Any S3-compatible storage works: set its endpoint, use the *Path* addressing style if it doesn't
 support virtual hosts. Vesta Backup turns off the CRC checksums that recent AWS libraries send by default,
@@ -143,12 +148,17 @@ protect.
 ## دیگر هیچ پایگاه‌داده‌ی اودویی از دست نمی‌رود
 
 **پشتیبان وستا** هر شب، هر هفته یا هر ساعت از پایگاه‌داده‌ی اودو ۲۰ **و** فایل‌هایش پشتیبان می‌گیرد و آن را روی
-فضایی می‌گذارد که مال خود شماست: MinIO داخل شبکه‌ی خودتان، آروان‌کلاد، Amazon S3، Cloudflare R2 یا دیسک همان
-سرور. پشتیبان‌های قدیمی خودکار پاک می‌شوند، هر فایل چک‌سام دارد و هر پشتیبان با یک کلیک روی رایانه‌ی شما دانلود
+فضایی می‌گذارد که مال خود شماست: MinIO داخل شبکه‌ی خودتان، لیارا، پارس‌پک، همروش، آروان‌کلاد، AWS،
+DigitalOcean یا هر فضای سازگار با S3 دیگر، یا دیسک همان سرور. پشتیبان‌های قدیمی خودکار پاک می‌شوند، هر فایل چک‌سام دارد و هر پشتیبان با یک کلیک روی رایانه‌ی شما دانلود
 می‌شود.
 
 بدون اسکریپت cron، بدون SSH، بدون فراموشی. اپ را باز کنید، با یک نگاه ببینید کدام مقصد سالم است و پیش از هر
 کار پرخطر **پشتیبان‌گیری الان** را بزنید.
+
+<p align="center">
+  <b>سازگار با</b><br><br>
+  <img src="vesta_backup/static/description/providers_fa.png" alt="MinIO، AWS، DigitalOcean، لیارا، پارس‌پک، همروش و هر S3 دیگر" width="100%">
+</p>
 
 <p align="center">
   <img src="vesta_backup/static/description/screenshots/destinations_fa.jpg" alt="همه‌ی مقصدها در یک صفحه" width="100%">
@@ -158,7 +168,7 @@ protect.
 
 - 🗄️ **پایگاه‌داده و فایل‌ها جداگانه**: یک `pg_dump` فشرده (`.dump`)، فایل‌ها به‌صورت `.tar.gz` و یک فایل مشخصات؛ فقط پایگاه‌داده یا فقط پیوست‌ها را برگردانید.
 - 📦 **یا یک فایل zip اودو**: همان قالب مدیر پایگاه‌داده‌ی اودو؛ از `/web/database/manager` با دو کلیک بازگردانی می‌شود.
-- ☁️ **هر S3، حتی MinIO خودتان**: آروان‌کلاد، MinIO، Amazon S3، Cloudflare R2، Wasabi و ...
+- ☁️ **هر S3، حتی MinIO خودتان**: MinIO، لیارا، پارس‌پک، همروش، آروان‌کلاد، AWS، DigitalOcean Spaces، Cloudflare R2 و هر فضای سازگار با S3 دیگر
 - ⏰ **زمان‌بندی جدا برای هر مقصد**: شبانه روی MinIO، هفتگی روی آروان‌کلاد، ماهانه روی S3.
 - ♻️ **نگهداری امن**: آخرین N پشتیبان و/یا N روز اخیر؛ آخرین پشتیبان هیچ‌وقت پاک نمی‌شود.
 - ⬇️ **دانلود با یک کلیک**: از طریق خود اودو (حتی برای MinIO داخلی) یا با لینک امضاشده‌ی موقت.

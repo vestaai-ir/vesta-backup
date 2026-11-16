@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 20.0+e-20261109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 01:23+0000\n"
-"PO-Revision-Date: 2026-11-16 01:23+0000\n"
+"POT-Creation-Date: 2026-11-16 01:34+0000\n"
+"PO-Revision-Date: 2026-11-16 01:34+0000\n"
 "Last-Translator: Vesta AI\n"
 "Language-Team: Vesta AI\n"
 "Language: fa\n"
@@ -707,10 +707,10 @@ msgstr "فضای S3"
 #: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__destination
 #: model:ir.model.fields,help:vesta_backup.field_vesta_backup_job__destination
 msgid ""
-"S3: any S3-compatible storage (Amazon S3, MinIO, ArvanCloud, Cloudflare R2, Wasabi, ...).\n"
+"S3: any S3-compatible storage (MinIO, AWS, DigitalOcean, Liara, ParsPack, Hamravesh, ArvanCloud, ...).\n"
 "Server Disk: keep the backups on this server, to download them to your computer."
 msgstr ""
-"S3: هر فضای سازگار با S3 (Amazon S3، MinIO، آروان‌کلاد، Cloudflare R2، Wasabi و ...).\n"
+"S3: هر فضای سازگار با S3 (MinIO، AWS، DigitalOcean، لیارا، پارس‌پک، همروش، آروان‌کلاد و ...).\n"
 "دیسک سرور: پشتیبان‌ها روی همین سرور می‌مانند تا آن‌ها را روی رایانه‌ی خودتان دانلود کنید."
 
 #. module: vesta_backup
@@ -732,11 +732,13 @@ msgstr "زمان‌بندی‌شده"
 #. module: vesta_backup
 #: model:ir.module.module,summary:base.module_vesta_backup
 msgid ""
-"Scheduled backups of the database and the filestore to S3, MinIO or the "
-"server disk, with retention and one-click download"
+"Scheduled backups of the database and the filestore to MinIO, AWS, "
+"DigitalOcean, Liara, ParsPack, Hamravesh or any S3, or the server disk, with"
+" retention and one-click download"
 msgstr ""
-"پشتیبان‌گیری زمان‌بندی‌شده از پایگاه‌داده و فایل‌ها روی S3، MinIO یا دیسک "
-"سرور، با سیاست نگهداری و دانلود با یک کلیک"
+"پشتیبان‌گیری زمان‌بندی‌شده از پایگاه‌داده و فایل‌ها روی MinIO، AWS، "
+"DigitalOcean، لیارا، پارس‌پک، همروش یا هر S3 دیگر یا دیسک سرور، با سیاست "
+"نگهداری و دانلود با یک کلیک"
 
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_secret_key

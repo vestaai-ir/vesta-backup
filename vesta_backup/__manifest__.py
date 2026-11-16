@@ -2,7 +2,8 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 {
     "name": "Vesta Backup",
-    "summary": "Scheduled backups of the database and the filestore to S3, MinIO or the server disk,"
+    "summary": "Scheduled backups of the database and the filestore to MinIO, AWS, DigitalOcean, Liara, ParsPack,"
+    " Hamravesh or any S3, or the server disk,"
     " with retention and one-click download",
     "version": "20.0.1.0.0",
     "category": "Administration",

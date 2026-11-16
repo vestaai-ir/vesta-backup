@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 20.0+e-20261109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 01:23+0000\n"
-"PO-Revision-Date: 2026-11-16 01:23+0000\n"
+"POT-Creation-Date: 2026-11-16 01:34+0000\n"
+"PO-Revision-Date: 2026-11-16 01:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -699,7 +699,7 @@ msgstr ""
 #: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__destination
 #: model:ir.model.fields,help:vesta_backup.field_vesta_backup_job__destination
 msgid ""
-"S3: any S3-compatible storage (Amazon S3, MinIO, ArvanCloud, Cloudflare R2, Wasabi, ...).\n"
+"S3: any S3-compatible storage (MinIO, AWS, DigitalOcean, Liara, ParsPack, Hamravesh, ArvanCloud, ...).\n"
 "Server Disk: keep the backups on this server, to download them to your computer."
 msgstr ""
 
@@ -722,8 +722,9 @@ msgstr ""
 #. module: vesta_backup
 #: model:ir.module.module,summary:base.module_vesta_backup
 msgid ""
-"Scheduled backups of the database and the filestore to S3, MinIO or the "
-"server disk, with retention and one-click download"
+"Scheduled backups of the database and the filestore to MinIO, AWS, "
+"DigitalOcean, Liara, ParsPack, Hamravesh or any S3, or the server disk, with"
+" retention and one-click download"
 msgstr ""
 
 #. module: vesta_backup
