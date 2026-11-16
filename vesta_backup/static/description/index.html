@@ -1,0 +1,124 @@
+<section class="container" style="max-width: 1100px;">
+    <div class="text-center my-4">
+        <img src="banner.png" alt="Vesta Backup" class="img-fluid" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,.25);"/>
+    </div>
+
+    <div class="my-5">
+        <h2 style="font-weight: 800;">Never lose an Odoo database again</h2>
+        <p class="lead">Vesta Backup backs up your Odoo 20 database <b>and</b> its files on a schedule, to the storage you own: a MinIO on your own network, Amazon S3, ArvanCloud, Cloudflare R2, Wasabi or the server disk. Old backups are pruned for you, every file is checksummed, and any backup is one click away from your laptop.</p>
+
+        <div class="row g-4 my-4">
+            <div class="col-md-4">
+                <h4>🗄️ What it saves</h4>
+                <ul>
+                    <li>Database as a compressed <code>pg_dump</code></li>
+                    <li>Filestore as a <code>.tar.gz</code>, plus a manifest</li>
+                    <li>Or one zip in the Odoo database manager format</li>
+                    <li>SHA-256 checksum of every file</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>☁️ Where it goes</h4>
+                <ul>
+                    <li>Any S3: MinIO, Amazon S3, ArvanCloud, R2, Wasabi</li>
+                    <li>Or the server disk, to download later</li>
+                    <li>Several destinations, one schedule each</li>
+                    <li>Test Connection and Create Bucket buttons</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>🛡️ How it stays safe</h4>
+                <ul>
+                    <li>Keep the last N backups and/or N days</li>
+                    <li>The latest backup is never deleted</li>
+                    <li>Failures flagged and emailed to followers</li>
+                    <li>Admin only; downloads confined to the backup folder</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-5">
+        <img src="screenshots/destinations_en.jpg" alt="Every destination on one screen" class="img-fluid border rounded-3 shadow-sm"/>
+        <p class="text-center text-muted mt-2">Every destination on one screen: last and next backup, stored size, retention and the last 14 runs.</p>
+    </div>
+
+    <div class="row g-4 my-4">
+        <div class="col-md-6">
+            <img src="screenshots/backups_en.jpg" alt="Backup history" class="img-fluid border rounded-3 shadow-sm"/>
+            <p class="text-center text-muted mt-2">Every backup with its status, size and a Download button.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="screenshots/growth_en.jpg" alt="Backup volume" class="img-fluid border rounded-3 shadow-sm"/>
+            <p class="text-center text-muted mt-2">Backup volume per week and destination.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="screenshots/destination_form_en.jpg" alt="Destination settings" class="img-fluid border rounded-3 shadow-sm"/>
+            <p class="text-center text-muted mt-2">S3 endpoint, schedule and retention in one form.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="screenshots/backup_files_en.jpg" alt="Files of a backup" class="img-fluid border rounded-3 shadow-sm"/>
+            <p class="text-center text-muted mt-2">Database, files and manifest: download each one.</p>
+        </div>
+    </div>
+
+    <div class="my-5 p-4" style="border-radius: 16px; background: #0f1830; color: #fff;">
+        <h3 style="font-weight: 800; color: #fff;">Up and running in three steps</h3>
+        <ol class="mb-0" style="color: #d8e1f0;">
+            <li>Run <code>pip install boto3</code> on the server and install Vesta Backup.</li>
+            <li>Create a destination: endpoint, bucket and keys, then click <b>Test Connection</b>.</li>
+            <li>Pick a schedule and a retention, then click <b>Backup Now</b>.</li>
+        </ol>
+    </div>
+
+    <hr class="my-5"/>
+
+    <div dir="rtl" class="my-5">
+        <div class="text-center my-4">
+            <img src="banner_fa.png" alt="پشتیبان وستا" class="img-fluid" style="border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,.25);"/>
+        </div>
+        <h2 style="font-weight: 800;">دیگر هیچ پایگاه‌داده‌ی اودویی از دست نمی‌رود</h2>
+        <p class="lead">پشتیبان وستا طبق زمان‌بندی از پایگاه‌داده‌ی اودو ۲۰ <b>و</b> فایل‌هایش پشتیبان می‌گیرد و آن را روی فضای خود شما می‌گذارد: MinIO داخل شبکه، آروان‌کلاد، Amazon S3، Cloudflare R2 یا دیسک سرور. پشتیبان‌های قدیمی خودکار پاک می‌شوند، هر فایل چک‌سام دارد و هر پشتیبان با یک کلیک روی رایانه‌ی شما دانلود می‌شود.</p>
+        <div class="row g-4 my-4">
+            <div class="col-md-4">
+                <h4>🗄️ چه چیزی</h4>
+                <ul>
+                    <li>پایگاه‌داده به‌صورت <code>pg_dump</code> فشرده</li>
+                    <li>فایل‌ها به‌صورت <code>.tar.gz</code> همراه فایل مشخصات</li>
+                    <li>یا یک zip در قالب مدیر پایگاه‌داده‌ی اودو</li>
+                    <li>چک‌سام SHA-256 برای هر فایل</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>☁️ کجا</h4>
+                <ul>
+                    <li>هر S3: MinIO، آروان‌کلاد، Amazon S3، R2</li>
+                    <li>یا دیسک سرور برای دانلود</li>
+                    <li>چند مقصد، هر کدام با زمان‌بندی خودش</li>
+                    <li>دکمه‌های آزمایش اتصال و ساختن باکت</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>🛡️ امنیت</h4>
+                <ul>
+                    <li>نگهداری آخرین N پشتیبان و/یا N روز</li>
+                    <li>آخرین پشتیبان هیچ‌وقت پاک نمی‌شود</li>
+                    <li>هشدار و ایمیل در صورت خطا</li>
+                    <li>فقط مدیر سیستم؛ دانلود فقط از پوشه‌ی پشتیبان</li>
+                </ul>
+            </div>
+        </div>
+        <img src="screenshots/destinations_fa.jpg" alt="مقصدهای پشتیبان" class="img-fluid border rounded-3 shadow-sm my-3"/>
+        <div class="row g-4 my-2">
+            <div class="col-md-6"><img src="screenshots/backups_fa.jpg" alt="فهرست پشتیبان‌ها" class="img-fluid border rounded-3 shadow-sm"/></div>
+            <div class="col-md-6"><img src="screenshots/backup_files_fa.jpg" alt="فایل‌های یک پشتیبان" class="img-fluid border rounded-3 shadow-sm"/></div>
+        </div>
+    </div>
+
+    <div class="my-5 text-center text-muted">
+        Made by <a href="https://vestaai.ir">Vesta AI</a> ·
+        <a href="https://github.com/vestaai-ir/vesta-backup">Source and documentation</a> ·
+        Also: <a href="https://github.com/vestaai-ir/vesta-payment-iran">Vesta Gateway</a>,
+        <a href="https://github.com/vestaai-ir/vesta-l10n-iran">Vesta Font</a>
+    </div>
+</section>

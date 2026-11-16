@@ -11,6 +11,7 @@ from odoo import _, api, fields, models
 from odoo.addons.vesta_backup import archive, const
 from odoo.exceptions import UserError
 from odoo.fields import Command
+from odoo.tools import format_datetime
 
 _logger = logging.getLogger(__name__)
 
@@ -20,7 +21,7 @@ TMP_PREFIX = ".tmp-"
 class VestaBackupJob(models.Model):
     _name = "vesta.backup.job"
     _description = "Backup"
-    _order = "id desc"
+    _order = "date_start desc, id desc"
     _rec_names_search = ["config_id"]
 
     name = fields.Char(compute="_compute_name")
@@ -50,20 +51,22 @@ class VestaBackupJob(models.Model):
     file_ids = fields.One2many(string="Files", comodel_name="vesta.backup.file", inverse_name="job_id")
     size = fields.Float(string="Size (bytes)", compute="_compute_size", store=True)
     size_display = fields.Char(string="Size", compute="_compute_size", store=True)
+    size_gb = fields.Float(string="Size (GB)", compute="_compute_size", store=True, digits=(16, 2), aggregator="sum")
     error = fields.Text(readonly=True)
 
     @api.depends("config_id.name", "date_start")
-    @api.depends_context("tz")
+    @api.depends_context("tz", "lang")
     def _compute_name(self):
         for job in self:
-            date = fields.Datetime.context_timestamp(job, job.date_start) if job.date_start else False
-            job.name = f"{job.config_id.name or ''} {date.strftime('%Y-%m-%d %H:%M') if date else ''}".strip()
+            date = format_datetime(self.env, job.date_start, dt_format="short") if job.date_start else ""
+            job.name = " · ".join(part for part in (job.config_id.name, date) if part)
 
     @api.depends("file_ids.size")
     def _compute_size(self):
         for job in self:
             job.size = sum(job.file_ids.mapped("size"))
-            job.size_display = self.env["vesta.backup.file"]._human_size(job.size)
+            job.size_display = self.env["vesta.backup.file"]._human_size(job.size) if job.size else False
+            job.size_gb = job.size / 1024**3
 
     @api.ondelete(at_uninstall=False)
     def _unlink_except_running(self):

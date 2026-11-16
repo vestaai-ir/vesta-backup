@@ -120,17 +120,46 @@ class VestaBackupConfig(models.Model):
     last_success_date = fields.Datetime(string="Last Successful Backup", compute="_compute_last_job")
     stored_size = fields.Float(string="Stored Size (bytes)", compute="_compute_last_job")
     stored_size_display = fields.Char(string="Stored Size", compute="_compute_last_job")
+    recent_states = fields.Char(
+        compute="_compute_last_job", help="States of the last backups, oldest first, for the kanban timeline."
+    )
+    schedule_display = fields.Char(string="Schedule", compute="_compute_schedule_display")
+    retention_display = fields.Char(string="Retention", compute="_compute_retention_display")
 
     _interval_number_positive = models.Constraint("CHECK(interval_number > 0)", "The backup interval must be positive.")
     _retention_positive = models.Constraint(
         "CHECK(keep_count >= 0 AND keep_days >= 0)", "Retention values can't be negative."
     )
 
+    @api.depends("scheduled", "interval_number", "interval_type")
+    def _compute_schedule_display(self):
+        single = {"hours": _("Hourly"), "days": _("Daily"), "weeks": _("Weekly"), "months": _("Monthly")}
+        units = {"hours": _("hours"), "days": _("days"), "weeks": _("weeks"), "months": _("months")}
+        for config in self:
+            if not config.scheduled:
+                config.schedule_display = _("Manual")
+            elif config.interval_number == 1:
+                config.schedule_display = single[config.interval_type]
+            else:
+                config.schedule_display = _(
+                    "Every %(number)s %(unit)s", number=config.interval_number, unit=units[config.interval_type]
+                )
+
+    @api.depends("keep_count", "keep_days")
+    def _compute_retention_display(self):
+        for config in self:
+            rules = []
+            if config.keep_count:
+                rules.append(_("Last %s", config.keep_count))
+            if config.keep_days:
+                rules.append(_("%s days", config.keep_days))
+            config.retention_display = " · ".join(rules) or _("Keep all")
+
     @api.depends("job_ids.state", "job_ids.size")
     def _compute_last_job(self):
         Job = self.env["vesta.backup.job"]
         for config in self:
-            jobs = Job.search([("config_id", "=", config.id)], order="id desc") if config.id else Job
+            jobs = Job.search([("config_id", "=", config.id)], order="date_start desc, id desc") if config.id else Job
             done = jobs.filtered(lambda j: j.state == "done")
             config.job_count = len(jobs)
             config.last_job_id = jobs[:1]
@@ -138,6 +167,8 @@ class VestaBackupConfig(models.Model):
             config.last_success_date = done[:1].date_start
             config.stored_size = sum(done.mapped("size"))
             config.stored_size_display = self.env["vesta.backup.file"]._human_size(config.stored_size)
+            recent = jobs.filtered(lambda j: j.state in ("done", "failed", "deleted"))[:14]
+            config.recent_states = ",".join(reversed(recent.mapped("state")))
 
     @api.constrains("destination", "s3_bucket")
     def _check_s3_bucket(self):

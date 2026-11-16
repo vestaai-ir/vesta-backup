@@ -18,9 +18,73 @@
                        decoration-info="last_state in ('pending', 'running')"/>
                 <field name="last_success_date"/>
                 <field name="stored_size_display"/>
-                <button name="action_backup_now" type="object" string="Backup Now" icon="fa-play"
+                <button name="action_backup_now" type="object" string="Backup Now" icon="play_arrow"
                         class="btn-link"/>
             </list>
+        </field>
+    </record>
+
+    <record id="vesta_backup_config_view_kanban" model="ir.ui.view">
+        <field name="name">vesta.backup.config.kanban</field>
+        <field name="model">vesta.backup.config</field>
+        <field name="arch" type="xml">
+            <kanban class="o_vesta_backup_kanban" quick_create="0">
+                <field name="destination"/>
+                <field name="scheduled"/>
+                <field name="last_state"/>
+                <field name="recent_states"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <i t-attf-class="oi oi-2x {{ record.destination.raw_value === 's3' ? 'text-info' : 'text-success' }}"
+                               t-att-data-icon="record.destination.raw_value === 's3' ? 'cloud_upload' : 'database'"/>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <field name="name" class="fw-bold fs-5 d-block"/>
+                                <span class="text-muted small">
+                                    <field name="destination"/> · <field name="schedule_display"/>
+                                </span>
+                            </div>
+                            <field name="last_state" widget="badge"
+                                   decoration-success="last_state == 'done'"
+                                   decoration-danger="last_state == 'failed'"
+                                   decoration-info="last_state in ('pending', 'running')"/>
+                        </div>
+                        <div t-if="record.recent_states.raw_value" class="d-flex gap-1 mb-3" title="Last backups">
+                            <t t-foreach="record.recent_states.raw_value.split(',')" t-as="state" t-key="state_index">
+                                <span t-attf-class="flex-grow-1 rounded-1 {{ state === 'failed' ? 'bg-danger' : (state === 'deleted' ? 'bg-secondary opacity-50' : 'bg-success') }}"
+                                      style="height: 10px; max-width: 18px;"/>
+                            </t>
+                        </div>
+                        <div class="row g-2 small mb-3">
+                            <div class="col-6">
+                                <div class="text-muted">Last successful backup</div>
+                                <field name="last_success_date" class="fw-semibold"/>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Next backup</div>
+                                <field name="next_run" class="fw-semibold" invisible="not scheduled"/>
+                                <span class="fw-semibold" invisible="scheduled">On demand</span>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Stored</div>
+                                <field name="stored_size_display" class="fw-semibold"/>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Retention</div>
+                                <field name="retention_display" class="fw-semibold"/>
+                            </div>
+                        </div>
+                        <footer class="pt-2">
+                            <button name="action_backup_now" type="object" class="btn btn-primary btn-sm">
+                                <i class="oi me-1" data-icon="play_arrow"/>Backup Now
+                            </button>
+                            <button name="action_view_jobs" type="object" class="btn btn-secondary btn-sm ms-1">
+                                Backups<span class="ms-1 opacity-75">(<field name="job_count"/>)</span>
+                            </button>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 
@@ -31,15 +95,15 @@
             <form>
                 <header>
                     <button name="action_backup_now" type="object" string="Backup Now" class="btn-primary"
-                            icon="fa-play"/>
+                            icon="play_arrow"/>
                     <button name="action_test_connection" type="object" string="Test Connection"
-                            icon="fa-plug"/>
+                            icon="power"/>
                     <button name="action_s3_create_bucket" type="object" string="Create Bucket"
                             invisible="destination != 's3'"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_jobs" type="object" class="oe_stat_button" icon="fa-archive">
+                        <button name="action_view_jobs" type="object" class="oe_stat_button" icon="inventory_2">
                             <field name="job_count" widget="statinfo" string="Backups"/>
                         </button>
                     </div>
@@ -123,7 +187,7 @@
     <record id="action_vesta_backup_config" model="ir.actions.act_window">
         <field name="name">Destinations</field>
         <field name="res_model">vesta.backup.config</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">kanban,list,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">Add a backup destination</p>
             <p>Back up this database and its files to S3, MinIO or the server disk, on a schedule.</p>

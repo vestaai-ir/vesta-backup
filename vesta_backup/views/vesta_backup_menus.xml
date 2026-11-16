@@ -4,20 +4,20 @@
     <menuitem id="menu_vesta_backup_root"
               name="Vesta Backup"
               web_icon="vesta_backup,static/description/icon.png"
-              action="action_vesta_backup_job"
+              action="action_vesta_backup_config"
               groups="base.group_system"
               sequence="920"/>
-
-    <menuitem id="menu_vesta_backup_jobs"
-              name="Backups"
-              parent="menu_vesta_backup_root"
-              action="action_vesta_backup_job"
-              sequence="10"/>
 
     <menuitem id="menu_vesta_backup_configs"
               name="Destinations"
               parent="menu_vesta_backup_root"
               action="action_vesta_backup_config"
+              sequence="10"/>
+
+    <menuitem id="menu_vesta_backup_jobs"
+              name="Backups"
+              parent="menu_vesta_backup_root"
+              action="action_vesta_backup_job"
               sequence="20"/>
 
 </odoo>

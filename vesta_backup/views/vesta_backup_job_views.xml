@@ -18,7 +18,7 @@
                        decoration-success="state == 'done'"
                        decoration-danger="state == 'failed'"
                        decoration-info="state in ('pending', 'running')"/>
-                <button name="action_download" type="object" string="Download" icon="fa-download"
+                <button name="action_download" type="object" string="Download" icon="download"
                         class="btn-link" invisible="state != 'done'"/>
             </list>
         </field>
@@ -37,7 +37,8 @@
                 </header>
                 <sheet>
                     <div class="oe_title">
-                        <h1><field name="name"/></h1>
+                        <h1><field name="config_id" readonly="1" options="{'no_open': True}"/></h1>
+                        <h3 class="text-muted"><field name="date_start" readonly="1"/></h3>
                     </div>
                     <group>
                         <group>
@@ -52,7 +53,6 @@
                             <field name="date_end"/>
                             <field name="duration"/>
                             <field name="size_display"/>
-                            <field name="storage_path"/>
                         </group>
                     </group>
                     <div class="alert alert-danger" role="alert" invisible="state != 'failed'">
@@ -65,12 +65,24 @@
                             <field name="size_display"/>
                             <field name="checksum" optional="hide"/>
                             <field name="location" optional="hide"/>
-                            <button name="action_download" type="object" string="Download" icon="fa-download"
+                            <button name="action_download" type="object" string="Download" icon="download"
                                     class="btn-link"/>
                         </list>
                     </field>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="vesta_backup_job_view_graph" model="ir.ui.view">
+        <field name="name">vesta.backup.job.graph</field>
+        <field name="model">vesta.backup.job</field>
+        <field name="arch" type="xml">
+            <graph string="Backup Volume" type="bar" stacked="1" sample="1">
+                <field name="date_start" interval="week"/>
+                <field name="config_id"/>
+                <field name="size_gb" type="measure"/>
+            </graph>
         </field>
     </record>
 
@@ -96,7 +108,7 @@
     <record id="action_vesta_backup_job" model="ir.actions.act_window">
         <field name="name">Backups</field>
         <field name="res_model">vesta.backup.job</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,graph,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_empty_folder">No backup yet</p>
             <p>Open a destination and click Backup Now, or wait for the next scheduled backup.</p>

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 20.0+e-20261109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 00:58+0000\n"
-"PO-Revision-Date: 2026-11-16 00:58+0000\n"
+"POT-Creation-Date: 2026-11-16 01:23+0000\n"
+"PO-Revision-Date: 2026-11-16 01:23+0000\n"
 "Last-Translator: Vesta AI\n"
 "Language-Team: Vesta AI\n"
 "Language: fa\n"
@@ -12,6 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "%s days"
+msgstr "%s روز"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "<i class=\"oi me-1\" data-icon=\"play_arrow\"/>Backup Now"
+msgstr "<i class=\"oi me-1\" data-icon=\"play_arrow\"/>پشتیبان‌گیری الان"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "<span class=\"fw-semibold\" invisible=\"scheduled\">On demand</span>"
+msgstr "<span class=\"fw-semibold\" invisible=\"scheduled\">هر وقت بخواهید</span>"
 
 #. module: vesta_backup
 #. odoo-python
@@ -110,6 +126,11 @@ msgid "Backup Now"
 msgstr "پشتیبان‌گیری الان"
 
 #. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_graph
+msgid "Backup Volume"
+msgstr "حجم پشتیبان‌ها"
+
+#. module: vesta_backup
 #. odoo-python
 #: code:addons/vesta_backup/models/vesta_backup_job.py:0
 msgid "Backup failed: %s"
@@ -126,6 +147,7 @@ msgstr "پشتیبان‌گیری شروع شد"
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__job_ids
 #: model:ir.ui.menu,name:vesta_backup.menu_vesta_backup_jobs
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
 msgid "Backups"
 msgstr "پشتیبان‌ها"
 
@@ -193,6 +215,12 @@ msgstr "تاریخ ایجاد"
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "Credentials"
 msgstr "اطلاعات دسترسی"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Daily"
+msgstr "روزانه"
 
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__database
@@ -320,6 +348,12 @@ msgid "Every"
 msgstr "هر"
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Every %(number)s %(unit)s"
+msgstr "هر %(number)s %(unit)s"
+
+#. module: vesta_backup
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__last_state__failed
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__state__failed
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
@@ -372,6 +406,12 @@ msgstr "قالب"
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__has_message
 msgid "Has Message"
 msgstr "دارای پیام"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Hourly"
+msgstr "ساعتی"
 
 #. module: vesta_backup
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__hours
@@ -443,9 +483,21 @@ msgid "Keep Last"
 msgstr "نگهداری آخرین"
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Keep all"
+msgstr "نگهداری همه"
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__kind
 msgid "Kind"
 msgstr "نوع"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Last %s"
+msgstr "آخرین %s"
 
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__last_job_id
@@ -478,6 +530,16 @@ msgid "Last Updated on"
 msgstr "آخرین به‌روزرسانی در"
 
 #. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Last backups"
+msgstr "آخرین پشتیبان‌ها"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Last successful backup"
+msgstr "آخرین پشتیبان موفق"
+
+#. module: vesta_backup
 #: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__s3_endpoint_url
 msgid "Leave empty for Amazon S3. MinIO example: http://minio:9000"
 msgstr "برای Amazon S3 خالی بگذارید. نمونه برای MinIO:‏ http://minio:9000"
@@ -494,6 +556,8 @@ msgid "Manifest"
 msgstr "مشخصات (Manifest)"
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__trigger__manual
 msgid "Manual"
 msgstr "دستی"
@@ -509,6 +573,12 @@ msgid "Messages"
 msgstr "پیام‌ها"
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Monthly"
+msgstr "ماهانه"
+
+#. module: vesta_backup
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__months
 msgid "Months"
 msgstr "ماه"
@@ -522,6 +592,11 @@ msgstr "نام"
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__next_run
 msgid "Next Backup"
+msgstr "پشتیبان بعدی"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Next backup"
 msgstr "پشتیبان بعدی"
 
 #. module: vesta_backup
@@ -590,12 +665,19 @@ msgid "Queued"
 msgstr "در صف"
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__recent_states
+msgid "Recent States"
+msgstr "وضعیت‌های اخیر"
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_region
 msgid "Region"
 msgstr "منطقه (Region)"
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__retention_display
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
 msgid "Retention"
 msgstr "نگهداری"
 
@@ -637,6 +719,7 @@ msgid "SHA-256"
 msgstr "SHA-256"
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__schedule_display
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "Schedule"
 msgstr "زمان‌بندی"
@@ -693,6 +776,11 @@ msgid "Size"
 msgstr "حجم"
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__size_gb
+msgid "Size (GB)"
+msgstr "حجم (گیگابایت)"
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__size
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__size
 msgid "Size (bytes)"
@@ -704,6 +792,11 @@ msgid "Started"
 msgstr "شروع"
 
 #. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__recent_states
+msgid "States of the last backups, oldest first, for the kanban timeline."
+msgstr "وضعیت آخرین پشتیبان‌ها، از قدیمی به جدید، برای نوار وضعیت کارت."
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__state
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
 msgid "Status"
@@ -713,6 +806,11 @@ msgstr "وضعیت"
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__destination
 msgid "Storage"
 msgstr "فضای ذخیره‌سازی"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Stored"
+msgstr "حجم ذخیره‌شده"
 
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__stored_size_display
@@ -820,6 +918,12 @@ msgid "Virtual Host (AWS)"
 msgstr "میزبان مجازی (AWS)"
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Weekly"
+msgstr "هفتگی"
+
+#. module: vesta_backup
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__weeks
 msgid "Weeks"
 msgstr "هفته"
@@ -830,11 +934,35 @@ msgid "What to Back Up"
 msgstr "از چه چیزی پشتیبان گرفته شود"
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "days"
+msgstr "روز"
+
+#. module: vesta_backup
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "e.g. MinIO nightly"
 msgstr "مثلاً MinIO شبانه"
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "hours"
+msgstr "ساعت"
+
+#. module: vesta_backup
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "https://s3.ir-thr-at1.arvanstorage.ir"
 msgstr "https://s3.ir-thr-at1.arvanstorage.ir"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "months"
+msgstr "ماه"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "weeks"
+msgstr "هفته"

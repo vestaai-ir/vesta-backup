@@ -6,14 +6,30 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 20.0+e-20261109\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-16 00:58+0000\n"
-"PO-Revision-Date: 2026-11-16 00:58+0000\n"
+"POT-Creation-Date: 2026-11-16 01:23+0000\n"
+"PO-Revision-Date: 2026-11-16 01:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "%s days"
+msgstr ""
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "<i class=\"oi me-1\" data-icon=\"play_arrow\"/>Backup Now"
+msgstr ""
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "<span class=\"fw-semibold\" invisible=\"scheduled\">On demand</span>"
+msgstr ""
 
 #. module: vesta_backup
 #. odoo-python
@@ -109,6 +125,11 @@ msgid "Backup Now"
 msgstr ""
 
 #. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_graph
+msgid "Backup Volume"
+msgstr ""
+
+#. module: vesta_backup
 #. odoo-python
 #: code:addons/vesta_backup/models/vesta_backup_job.py:0
 msgid "Backup failed: %s"
@@ -125,6 +146,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__job_ids
 #: model:ir.ui.menu,name:vesta_backup.menu_vesta_backup_jobs
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
 msgid "Backups"
 msgstr ""
 
@@ -191,6 +213,12 @@ msgstr ""
 #. module: vesta_backup
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "Credentials"
+msgstr ""
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Daily"
 msgstr ""
 
 #. module: vesta_backup
@@ -316,6 +344,12 @@ msgid "Every"
 msgstr ""
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Every %(number)s %(unit)s"
+msgstr ""
+
+#. module: vesta_backup
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__last_state__failed
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__state__failed
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
@@ -367,6 +401,12 @@ msgstr ""
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__has_message
 msgid "Has Message"
+msgstr ""
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Hourly"
 msgstr ""
 
 #. module: vesta_backup
@@ -439,8 +479,20 @@ msgid "Keep Last"
 msgstr ""
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Keep all"
+msgstr ""
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__kind
 msgid "Kind"
+msgstr ""
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Last %s"
 msgstr ""
 
 #. module: vesta_backup
@@ -474,6 +526,16 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Last backups"
+msgstr ""
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Last successful backup"
+msgstr ""
+
+#. module: vesta_backup
 #: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__s3_endpoint_url
 msgid "Leave empty for Amazon S3. MinIO example: http://minio:9000"
 msgstr ""
@@ -490,6 +552,8 @@ msgid "Manifest"
 msgstr ""
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__trigger__manual
 msgid "Manual"
 msgstr ""
@@ -502,6 +566,12 @@ msgstr ""
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_ids
 msgid "Messages"
+msgstr ""
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Monthly"
 msgstr ""
 
 #. module: vesta_backup
@@ -518,6 +588,11 @@ msgstr ""
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__next_run
 msgid "Next Backup"
+msgstr ""
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Next backup"
 msgstr ""
 
 #. module: vesta_backup
@@ -582,12 +657,19 @@ msgid "Queued"
 msgstr ""
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__recent_states
+msgid "Recent States"
+msgstr ""
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_region
 msgid "Region"
 msgstr ""
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__retention_display
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
 msgid "Retention"
 msgstr ""
 
@@ -627,6 +709,7 @@ msgid "SHA-256"
 msgstr ""
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__schedule_display
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "Schedule"
 msgstr ""
@@ -679,6 +762,11 @@ msgid "Size"
 msgstr ""
 
 #. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__size_gb
+msgid "Size (GB)"
+msgstr ""
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__size
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__size
 msgid "Size (bytes)"
@@ -690,6 +778,11 @@ msgid "Started"
 msgstr ""
 
 #. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__recent_states
+msgid "States of the last backups, oldest first, for the kanban timeline."
+msgstr ""
+
+#. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__state
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
 msgid "Status"
@@ -698,6 +791,11 @@ msgstr ""
 #. module: vesta_backup
 #: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__destination
 msgid "Storage"
+msgstr ""
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_kanban
+msgid "Stored"
 msgstr ""
 
 #. module: vesta_backup
@@ -793,6 +891,12 @@ msgid "Virtual Host (AWS)"
 msgstr ""
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Weekly"
+msgstr ""
+
+#. module: vesta_backup
 #: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__weeks
 msgid "Weeks"
 msgstr ""
@@ -803,11 +907,35 @@ msgid "What to Back Up"
 msgstr ""
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "days"
+msgstr ""
+
+#. module: vesta_backup
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "e.g. MinIO nightly"
 msgstr ""
 
 #. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "hours"
+msgstr ""
+
+#. module: vesta_backup
 #: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
 msgid "https://s3.ir-thr-at1.arvanstorage.ir"
+msgstr ""
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "months"
+msgstr ""
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "weeks"
 msgstr ""

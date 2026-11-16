@@ -21,4 +21,5 @@
         "views/vesta_backup_job_views.xml",
         "views/vesta_backup_menus.xml",
     ],
+    "images": ["static/description/banner.png"],
 }
