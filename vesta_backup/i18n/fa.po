@@ -1,0 +1,840 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0+e-20261109\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-16 00:58+0000\n"
+"PO-Revision-Date: 2026-11-16 00:58+0000\n"
+"Last-Translator: Vesta AI\n"
+"Language-Team: Vesta AI\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "A backup of this destination is already in progress."
+msgstr "پشتیبان‌گیری این مقصد هم‌اکنون در حال اجراست."
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_job.py:0
+msgid "A running backup can't be deleted."
+msgstr "پشتیبان در حال اجرا را نمی‌توان حذف کرد."
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_access_key
+msgid "Access Key"
+msgstr "کلید دسترسی (Access Key)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_needaction
+msgid "Action Needed"
+msgstr "نیاز به اقدام"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: vesta_backup
+#: model_terms:ir.actions.act_window,help:vesta_backup.action_vesta_backup_config
+msgid "Add a backup destination"
+msgstr "یک مقصد پشتیبان اضافه کنید"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_addressing_style
+msgid "Addressing Style"
+msgstr "شیوه‌ی آدرس‌دهی"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_search
+msgid "Archived"
+msgstr "بایگانی‌شده"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد پیوست‌ها"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__s3_addressing_style__auto
+msgid "Automatic"
+msgstr "خودکار"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__scheduled
+msgid "Automatic Backups"
+msgstr "پشتیبان‌گیری خودکار"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__include_filestore
+msgid ""
+"Back up the filestore (attachments, images, documents) with the database."
+msgstr ""
+"فایل‌ها (پیوست‌ها، تصاویر، اسناد) هم همراه پایگاه‌داده پشتیبان‌گیری شوند."
+
+#. module: vesta_backup
+#: model_terms:ir.actions.act_window,help:vesta_backup.action_vesta_backup_config
+msgid ""
+"Back up this database and its files to S3, MinIO or the server disk, on a "
+"schedule."
+msgstr ""
+"از این پایگاه‌داده و فایل‌هایش طبق زمان‌بندی روی S3، MinIO یا دیسک سرور "
+"پشتیبان بگیرید."
+
+#. module: vesta_backup
+#: model:ir.model,name:vesta_backup.model_vesta_backup_job
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__job_id
+msgid "Backup"
+msgstr "پشتیبان"
+
+#. module: vesta_backup
+#: model:ir.model,name:vesta_backup.model_vesta_backup_config
+msgid "Backup Destination"
+msgstr "مقصد پشتیبان"
+
+#. module: vesta_backup
+#: model:ir.model,name:vesta_backup.model_vesta_backup_file
+msgid "Backup File"
+msgstr "فایل پشتیبان"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_list
+msgid "Backup Now"
+msgstr "پشتیبان‌گیری الان"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_job.py:0
+msgid "Backup failed: %s"
+msgstr "پشتیبان‌گیری ناموفق بود: %s"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Backup started"
+msgstr "پشتیبان‌گیری شروع شد"
+
+#. module: vesta_backup
+#: model:ir.actions.act_window,name:vesta_backup.action_vesta_backup_job
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__job_ids
+#: model:ir.ui.menu,name:vesta_backup.menu_vesta_backup_jobs
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "Backups"
+msgstr "پشتیبان‌ها"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_bucket
+msgid "Bucket"
+msgstr "باکت"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Connected to the bucket %s and wrote a test file."
+msgstr "به باکت %s وصل شد و یک فایل آزمایشی نوشت."
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Connection OK"
+msgstr "اتصال برقرار است"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Connection failed: %s"
+msgstr "اتصال ناموفق بود: %s"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Could not create the bucket: %s"
+msgstr "ساختن باکت ممکن نشد: %s"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_job.py:0
+msgid "Could not delete the files: %s"
+msgstr "حذف فایل‌ها ممکن نشد: %s"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Could not write to the bucket: %s"
+msgstr "نوشتن در باکت ممکن نشد: %s"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "Create Bucket"
+msgstr "ساختن باکت"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__create_uid
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__create_uid
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__create_date
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__create_date
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "Credentials"
+msgstr "اطلاعات دسترسی"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__database
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_file__kind__database
+msgid "Database"
+msgstr "پایگاه‌داده"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_file__kind__zip
+msgid "Database and Files (zip)"
+msgstr "پایگاه‌داده و فایل‌ها (zip)"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__backup_format__separate
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__backup_format__separate
+msgid "Database and Files Separately"
+msgstr "پایگاه‌داده و فایل‌ها جداگانه"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
+msgid "Date"
+msgstr "تاریخ"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__days
+msgid "Days"
+msgstr "روز"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_form
+msgid "Delete Files"
+msgstr "حذف فایل‌ها"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__keep_days
+msgid ""
+"Delete successful backups older than this number of days. 0 disables it. The"
+" most recent backup is never deleted."
+msgstr ""
+"پشتیبان‌های موفقِ قدیمی‌تر از این تعداد روز حذف می‌شوند. صفر یعنی غیرفعال. "
+"آخرین پشتیبان هیچ‌وقت حذف نمی‌شود."
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_form
+msgid ""
+"Delete the files of this backup from the storage? This can't be undone."
+msgstr ""
+"فایل‌های این پشتیبان از فضای ذخیره‌سازی حذف شوند؟ این کار برگشت‌پذیر نیست."
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__last_state__deleted
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__state__deleted
+msgid "Deleted"
+msgstr "حذف‌شده"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__destination
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__config_id
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__config_id
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
+msgid "Destination"
+msgstr "مقصد"
+
+#. module: vesta_backup
+#: model:ir.actions.act_window,name:vesta_backup.action_vesta_backup_config
+#: model:ir.ui.menu,name:vesta_backup.menu_vesta_backup_configs
+msgid "Destinations"
+msgstr "مقصدها"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__display_name
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__display_name
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__last_state__done
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__state__done
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
+msgid "Done"
+msgstr "انجام شد"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_form
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_list
+msgid "Download"
+msgstr "دانلود"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_download_proxy
+msgid "Download Through Odoo"
+msgstr "دانلود از طریق اودو"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__duration
+msgid "Duration (s)"
+msgstr "مدت (ثانیه)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_endpoint_url
+msgid "Endpoint URL"
+msgstr "آدرس سرویس (Endpoint)"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Enter the bucket of the S3 destination %s."
+msgstr "باکت مقصد S3 «%s» را وارد کنید."
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Enter the bucket, the access key and the secret key of %s."
+msgstr "باکت، کلید دسترسی و کلید محرمانه‌ی «%s» را وارد کنید."
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__error
+msgid "Error"
+msgstr "خطا"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__interval_number
+msgid "Every"
+msgstr "هر"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__last_state__failed
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__state__failed
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
+msgid "Failed"
+msgstr "ناموفق"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__name
+msgid "File Name"
+msgstr "نام فایل"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__file_ids
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_file__kind__filestore
+msgid "Files"
+msgstr "فایل‌ها"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__date_end
+msgid "Finished"
+msgstr "پایان"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_prefix
+msgid "Folder"
+msgstr "پوشه"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_job__storage_path
+msgid "Folder of the files on the storage."
+msgstr "پوشه‌ی فایل‌ها روی فضای ذخیره‌سازی."
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (همکاران)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__backup_format
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__backup_format
+msgid "Format"
+msgstr "قالب"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__hours
+msgid "Hours"
+msgstr "ساعت"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__id
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__id
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "اگر علامت بخورد، پیام‌های جدید نیاز به توجه شما دارند."
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "اگر علامت بخورد، برخی پیام‌ها خطای تحویل دارند."
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
+msgid "In Progress"
+msgstr "در حال انجام"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__include_filestore
+msgid "Include Files"
+msgstr "همراه فایل‌ها"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "Install the Python library boto3 on the server: pip install boto3"
+msgstr "کتابخانه‌ی پایتون boto3 را روی سرور نصب کنید: pip install boto3"
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_job.py:0
+msgid "Interrupted."
+msgstr "متوقف شد."
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__interval_type
+msgid "Interval Unit"
+msgstr "واحد بازه"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__job_count
+msgid "Job Count"
+msgstr "تعداد پشتیبان‌ها"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__keep_days
+msgid "Keep Days"
+msgstr "نگهداری (روز)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__keep_count
+msgid "Keep Last"
+msgstr "نگهداری آخرین"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__kind
+msgid "Kind"
+msgstr "نوع"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__last_job_id
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "Last Backup"
+msgstr "آخرین پشتیبان"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__last_state
+msgid "Last Status"
+msgstr "آخرین وضعیت"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__last_success_date
+msgid "Last Successful Backup"
+msgstr "آخرین پشتیبان موفق"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__write_uid
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__write_uid
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__write_uid
+msgid "Last Updated by"
+msgstr "آخرین به‌روزرسانی توسط"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__write_date
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__write_date
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__write_date
+msgid "Last Updated on"
+msgstr "آخرین به‌روزرسانی در"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__s3_endpoint_url
+msgid "Leave empty for Amazon S3. MinIO example: http://minio:9000"
+msgstr "برای Amazon S3 خالی بگذارید. نمونه برای MinIO:‏ http://minio:9000"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__location
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__storage_path
+msgid "Location"
+msgstr "محل ذخیره"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_file__kind__manifest
+msgid "Manifest"
+msgstr "مشخصات (Manifest)"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__trigger__manual
+msgid "Manual"
+msgstr "دستی"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای تحویل پیام"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__months
+msgid "Months"
+msgstr "ماه"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__name
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__name
+msgid "Name"
+msgstr "نام"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__next_run
+msgid "Next Backup"
+msgstr "پشتیبان بعدی"
+
+#. module: vesta_backup
+#: model_terms:ir.actions.act_window,help:vesta_backup.action_vesta_backup_job
+msgid "No backup yet"
+msgstr "هنوز پشتیبانی گرفته نشده"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدام‌ها"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای تحویل"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__keep_count
+msgid ""
+"Number of successful backups to keep; older ones are deleted. 0 keeps all of"
+" them."
+msgstr ""
+"تعداد پشتیبان‌های موفقی که نگه داشته می‌شوند؛ قدیمی‌ترها حذف می‌شوند. صفر "
+"یعنی همه نگه داشته شوند."
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_file__location
+msgid "Object key on S3, or path on the server disk."
+msgstr "کلید شیء روی S3 یا مسیر روی دیسک سرور."
+
+#. module: vesta_backup
+#: model_terms:ir.actions.act_window,help:vesta_backup.action_vesta_backup_job
+msgid ""
+"Open a destination and click Backup Now, or wait for the next scheduled "
+"backup."
+msgstr ""
+"یک مقصد را باز کنید و «پشتیبان‌گیری الان» را بزنید، یا منتظر پشتیبان "
+"زمان‌بندی‌شده‌ی بعدی بمانید."
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__s3_addressing_style__path
+msgid "Path (MinIO)"
+msgstr "مسیر (MinIO)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__s3_prefix
+msgid ""
+"Prefix of the objects in the bucket; the database name is appended to it."
+msgstr "پیشوند فایل‌ها در باکت؛ نام پایگاه‌داده به آن اضافه می‌شود."
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__last_state__pending
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__state__pending
+msgid "Queued"
+msgstr "در صف"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_region
+msgid "Region"
+msgstr "منطقه (Region)"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "Retention"
+msgstr "نگهداری"
+
+#. module: vesta_backup
+#: model:ir.model.constraint,message:vesta_backup.constraint_vesta_backup_config_retention_positive
+msgid "Retention values can't be negative."
+msgstr "مقادیر نگهداری نمی‌توانند منفی باشند."
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__last_state__running
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__state__running
+msgid "Running"
+msgstr "در حال اجرا"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__destination__s3
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_search
+msgid "S3 / MinIO"
+msgstr "S3 / MinIO"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "S3 Storage"
+msgstr "فضای S3"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__destination
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_job__destination
+msgid ""
+"S3: any S3-compatible storage (Amazon S3, MinIO, ArvanCloud, Cloudflare R2, Wasabi, ...).\n"
+"Server Disk: keep the backups on this server, to download them to your computer."
+msgstr ""
+"S3: هر فضای سازگار با S3 (Amazon S3، MinIO، آروان‌کلاد، Cloudflare R2، Wasabi و ...).\n"
+"دیسک سرور: پشتیبان‌ها روی همین سرور می‌مانند تا آن‌ها را روی رایانه‌ی خودتان دانلود کنید."
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__checksum
+msgid "SHA-256"
+msgstr "SHA-256"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "Schedule"
+msgstr "زمان‌بندی"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__trigger__scheduled
+msgid "Scheduled"
+msgstr "زمان‌بندی‌شده"
+
+#. module: vesta_backup
+#: model:ir.module.module,summary:base.module_vesta_backup
+msgid ""
+"Scheduled backups of the database and the filestore to S3, MinIO or the "
+"server disk, with retention and one-click download"
+msgstr ""
+"پشتیبان‌گیری زمان‌بندی‌شده از پایگاه‌داده و فایل‌ها روی S3، MinIO یا دیسک "
+"سرور، با سیاست نگهداری و دانلود با یک کلیک"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_secret_key
+msgid "Secret Key"
+msgstr "کلید محرمانه (Secret Key)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__backup_format
+msgid ""
+"Separately: a compressed pg_dump of the database (.dump) and a .tar.gz of the filestore.\n"
+"Single zip: the format of the Odoo database manager, restorable from /web/database/manager."
+msgstr ""
+"جداگانه: یک pg_dump فشرده از پایگاه‌داده (.dump) و یک ‎.tar.gz از فایل‌ها.\n"
+"یک zip: قالب مدیر پایگاه‌داده‌ی اودو، قابل بازگردانی از ‎/web/database/manager."
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__sequence
+msgid "Sequence"
+msgstr "ترتیب"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__destination__local
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_search
+msgid "Server Disk"
+msgstr "دیسک سرور"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__backup_format__zip
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_job__backup_format__zip
+msgid "Single Zip (Odoo restore format)"
+msgstr "یک فایل zip (قالب بازگردانی اودو)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__size_display
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__size_display
+msgid "Size"
+msgstr "حجم"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_file__size
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__size
+msgid "Size (bytes)"
+msgstr "حجم (بایت)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__date_start
+msgid "Started"
+msgstr "شروع"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__state
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_job_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__destination
+msgid "Storage"
+msgstr "فضای ذخیره‌سازی"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__stored_size_display
+msgid "Stored Size"
+msgstr "حجم ذخیره‌شده"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__stored_size
+msgid "Stored Size (bytes)"
+msgstr "حجم ذخیره‌شده (بایت)"
+
+#. module: vesta_backup
+#: model:ir.model.fields,help:vesta_backup.field_vesta_backup_config__s3_download_proxy
+msgid ""
+"Stream downloads through this server. Uncheck to send the browser to a "
+"temporary signed link of the storage instead, if the storage is reachable "
+"from the users' computers."
+msgstr ""
+"دانلود از طریق همین سرور انجام شود. اگر فضای ذخیره‌سازی از رایانه‌ی کاربران "
+"در دسترس است، علامت را بردارید تا مرورگر به یک لینک امضاشده‌ی موقت فرستاده "
+"شود."
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "Test Connection"
+msgstr "آزمایش اتصال"
+
+#. module: vesta_backup
+#: model:ir.model.constraint,message:vesta_backup.constraint_vesta_backup_config_interval_number_positive
+msgid "The backup interval must be positive."
+msgstr "بازه‌ی پشتیبان‌گیری باید مثبت باشد."
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid ""
+"The backup runs in the background. Refresh the list of backups to follow it."
+msgstr ""
+"پشتیبان‌گیری در پس‌زمینه اجرا می‌شود. برای پیگیری، فهرست پشتیبان‌ها را تازه "
+"کنید."
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid ""
+"The backups are kept in the backup folder of the server (by default the\n"
+"                        <code>backups</code> folder of the Odoo data directory, or the\n"
+"                        <code>vesta_backup_dir</code> option of the server configuration).\n"
+"                        Download them from the list of backups."
+msgstr ""
+"پشتیبان‌ها در پوشه‌ی پشتیبان سرور نگه داشته می‌شوند (به‌طور پیش‌فرض پوشه‌ی\n"
+"                        <code>backups</code> در پوشه‌ی داده‌ی اودو، یا گزینه‌ی\n"
+"                        <code>vesta_backup_dir</code> در تنظیمات سرور).\n"
+"                        آن‌ها را از فهرست پشتیبان‌ها دانلود کنید."
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid ""
+"The bucket %s doesn't exist. Use the Create Bucket button or create it on "
+"the storage."
+msgstr ""
+"باکت %s وجود ندارد. دکمه‌ی «ساختن باکت» را بزنید یا آن را روی فضای "
+"ذخیره‌سازی بسازید."
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid "The server disk folder is ready."
+msgstr "پوشه‌ی دیسک سرور آماده است."
+
+#. module: vesta_backup
+#. odoo-python
+#: code:addons/vesta_backup/models/vesta_backup_config.py:0
+msgid ""
+"This destination still has backups. Delete the backups first, or archive the"
+" destination."
+msgstr ""
+"این مقصد هنوز پشتیبان دارد. ابتدا پشتیبان‌ها را حذف کنید یا مقصد را بایگانی "
+"کنید."
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_job__trigger
+msgid "Trigger"
+msgstr "نحوه‌ی اجرا"
+
+#. module: vesta_backup
+#: model:ir.model.fields,field_description:vesta_backup.field_vesta_backup_config__s3_verify_ssl
+msgid "Verify SSL Certificate"
+msgstr "بررسی گواهی SSL"
+
+#. module: vesta_backup
+#: model:ir.module.module,shortdesc:base.module_vesta_backup
+#: model:ir.ui.menu,name:vesta_backup.menu_vesta_backup_root
+msgid "Vesta Backup"
+msgstr "پشتیبان وستا"
+
+#. module: vesta_backup
+#: model:ir.actions.server,name:vesta_backup.ir_cron_vesta_backup_ir_actions_server
+msgid "Vesta Backup: run scheduled and queued backups"
+msgstr "پشتیبان وستا: اجرای پشتیبان‌های زمان‌بندی‌شده و در صف"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__s3_addressing_style__virtual
+msgid "Virtual Host (AWS)"
+msgstr "میزبان مجازی (AWS)"
+
+#. module: vesta_backup
+#: model:ir.model.fields.selection,name:vesta_backup.selection__vesta_backup_config__interval_type__weeks
+msgid "Weeks"
+msgstr "هفته"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "What to Back Up"
+msgstr "از چه چیزی پشتیبان گرفته شود"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "e.g. MinIO nightly"
+msgstr "مثلاً MinIO شبانه"
+
+#. module: vesta_backup
+#: model_terms:ir.ui.view,arch_db:vesta_backup.vesta_backup_config_view_form
+msgid "https://s3.ir-thr-at1.arvanstorage.ir"
+msgstr "https://s3.ir-thr-at1.arvanstorage.ir"

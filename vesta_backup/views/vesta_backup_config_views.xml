@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="vesta_backup_config_view_list" model="ir.ui.view">
+        <field name="name">vesta.backup.config.list</field>
+        <field name="model">vesta.backup.config</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="destination"/>
+                <field name="backup_format"/>
+                <field name="scheduled" widget="boolean_toggle"/>
+                <field name="next_run" invisible="not scheduled"/>
+                <field name="last_state" widget="badge"
+                       decoration-success="last_state == 'done'"
+                       decoration-danger="last_state == 'failed'"
+                       decoration-info="last_state in ('pending', 'running')"/>
+                <field name="last_success_date"/>
+                <field name="stored_size_display"/>
+                <button name="action_backup_now" type="object" string="Backup Now" icon="fa-play"
+                        class="btn-link"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="vesta_backup_config_view_form" model="ir.ui.view">
+        <field name="name">vesta.backup.config.form</field>
+        <field name="model">vesta.backup.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_backup_now" type="object" string="Backup Now" class="btn-primary"
+                            icon="fa-play"/>
+                    <button name="action_test_connection" type="object" string="Test Connection"
+                            icon="fa-plug"/>
+                    <button name="action_s3_create_bucket" type="object" string="Create Bucket"
+                            invisible="destination != 's3'"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_jobs" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="job_count" widget="statinfo" string="Backups"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <field name="active" invisible="1"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. MinIO nightly"/></h1>
+                    </div>
+                    <group>
+                        <group string="What to Back Up" name="content">
+                            <field name="destination" widget="radio"/>
+                            <field name="backup_format" widget="radio"/>
+                            <field name="include_filestore"/>
+                        </group>
+                        <group string="Last Backup" name="status">
+                            <field name="last_job_id" readonly="1"/>
+                            <field name="last_state" widget="badge"
+                                   decoration-success="last_state == 'done'"
+                                   decoration-danger="last_state == 'failed'"/>
+                            <field name="last_success_date"/>
+                            <field name="stored_size_display"/>
+                        </group>
+                    </group>
+                    <group invisible="destination != 's3'">
+                        <group string="S3 Storage" name="s3">
+                            <field name="s3_endpoint_url" placeholder="https://s3.ir-thr-at1.arvanstorage.ir"/>
+                            <field name="s3_region"/>
+                            <field name="s3_bucket" required="destination == 's3'"/>
+                            <field name="s3_prefix"/>
+                        </group>
+                        <group string="Credentials" name="s3_credentials">
+                            <field name="s3_access_key" required="destination == 's3'"/>
+                            <field name="s3_secret_key" password="True" required="destination == 's3'"/>
+                            <field name="s3_addressing_style"/>
+                            <field name="s3_verify_ssl"/>
+                            <field name="s3_download_proxy"/>
+                        </group>
+                    </group>
+                    <div invisible="destination != 'local'" class="alert alert-info" role="status">
+                        The backups are kept in the backup folder of the server (by default the
+                        <code>backups</code> folder of the Odoo data directory, or the
+                        <code>vesta_backup_dir</code> option of the server configuration).
+                        Download them from the list of backups.
+                    </div>
+                    <group>
+                        <group string="Schedule" name="schedule">
+                            <field name="scheduled"/>
+                            <label for="interval_number" invisible="not scheduled"/>
+                            <div class="o_row" invisible="not scheduled">
+                                <field name="interval_number" class="oe_inline"/>
+                                <field name="interval_type" class="oe_inline"/>
+                            </div>
+                            <field name="next_run" invisible="not scheduled" required="scheduled"/>
+                        </group>
+                        <group string="Retention" name="retention">
+                            <field name="keep_count"/>
+                            <field name="keep_days"/>
+                        </group>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="vesta_backup_config_view_search" model="ir.ui.view">
+        <field name="name">vesta.backup.config.search</field>
+        <field name="model">vesta.backup.config</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="s3" string="S3 / MinIO" domain="[('destination', '=', 's3')]"/>
+                <filter name="local" string="Server Disk" domain="[('destination', '=', 'local')]"/>
+                <separator/>
+                <filter name="inactive" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_vesta_backup_config" model="ir.actions.act_window">
+        <field name="name">Destinations</field>
+        <field name="res_model">vesta.backup.config</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add a backup destination</p>
+            <p>Back up this database and its files to S3, MinIO or the server disk, on a schedule.</p>
+        </field>
+    </record>
+
+</odoo>

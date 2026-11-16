@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="config_download" model="vesta.backup.config">
+        <field name="name">Download to my computer</field>
+        <field name="sequence">90</field>
+        <field name="destination">local</field>
+        <field name="backup_format">zip</field>
+        <field name="scheduled" eval="False"/>
+        <field name="keep_count">3</field>
+    </record>
+
+</odoo>

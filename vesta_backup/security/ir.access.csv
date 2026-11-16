@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+access_vesta_backup_config_system,Backup destinations: settings users,vesta.backup.config,base.group_system,crud,
+access_vesta_backup_job_system,Backups: settings users,vesta.backup.job,base.group_system,crud,
+access_vesta_backup_file_system,Backup files: settings users,vesta.backup.file,base.group_system,crud,

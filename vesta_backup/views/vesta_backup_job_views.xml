@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="vesta_backup_job_view_list" model="ir.ui.view">
+        <field name="name">vesta.backup.job.list</field>
+        <field name="model">vesta.backup.job</field>
+        <field name="arch" type="xml">
+            <list create="0" decoration-muted="state == 'deleted'">
+                <field name="date_start"/>
+                <field name="config_id"/>
+                <field name="destination" optional="show"/>
+                <field name="backup_format" optional="show"/>
+                <field name="trigger" optional="hide"/>
+                <field name="database" optional="hide"/>
+                <field name="duration" optional="show"/>
+                <field name="size_display"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'done'"
+                       decoration-danger="state == 'failed'"
+                       decoration-info="state in ('pending', 'running')"/>
+                <button name="action_download" type="object" string="Download" icon="fa-download"
+                        class="btn-link" invisible="state != 'done'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="vesta_backup_job_view_form" model="ir.ui.view">
+        <field name="name">vesta.backup.job.form</field>
+        <field name="model">vesta.backup.job</field>
+        <field name="arch" type="xml">
+            <form create="0" edit="0">
+                <header>
+                    <button name="action_delete_files" type="object" string="Delete Files"
+                            invisible="state != 'done'"
+                            confirm="Delete the files of this backup from the storage? This can't be undone."/>
+                    <field name="state" widget="statusbar" statusbar_visible="pending,running,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="config_id"/>
+                            <field name="destination"/>
+                            <field name="backup_format"/>
+                            <field name="database"/>
+                            <field name="trigger"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="duration"/>
+                            <field name="size_display"/>
+                            <field name="storage_path"/>
+                        </group>
+                    </group>
+                    <div class="alert alert-danger" role="alert" invisible="state != 'failed'">
+                        <field name="error"/>
+                    </div>
+                    <field name="file_ids" readonly="1">
+                        <list>
+                            <field name="kind"/>
+                            <field name="name"/>
+                            <field name="size_display"/>
+                            <field name="checksum" optional="hide"/>
+                            <field name="location" optional="hide"/>
+                            <button name="action_download" type="object" string="Download" icon="fa-download"
+                                    class="btn-link"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="vesta_backup_job_view_search" model="ir.ui.view">
+        <field name="name">vesta.backup.job.search</field>
+        <field name="model">vesta.backup.job</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="config_id"/>
+                <filter name="done" string="Done" domain="[('state', '=', 'done')]"/>
+                <filter name="failed" string="Failed" domain="[('state', '=', 'failed')]"/>
+                <filter name="in_progress" string="In Progress" domain="[('state', 'in', ('pending', 'running'))]"/>
+                <separator/>
+                <filter name="date_start" string="Date" date="date_start"/>
+                <group>
+                    <filter name="group_config" string="Destination" context="{'group_by': 'config_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_vesta_backup_job" model="ir.actions.act_window">
+        <field name="name">Backups</field>
+        <field name="res_model">vesta.backup.job</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">No backup yet</p>
+            <p>Open a destination and click Backup Now, or wait for the next scheduled backup.</p>
+        </field>
+    </record>
+
+</odoo>
