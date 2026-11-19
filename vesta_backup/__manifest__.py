@@ -7,7 +7,7 @@
     " with retention and one-click download",
     "version": "20.0.1.0.0",
     "category": "Administration",
-    "website": "https://github.com/vestaai-ir/vesta-backup",
+    "website": "https://vestaai.ir/odoo/modules/vesta-backup",
     "author": "Vesta AI",
     "license": "LGPL-3",
     "application": True,
