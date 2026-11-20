@@ -53,7 +53,7 @@ press **Backup Now** whenever you are about to do something risky.
 | ⬇️ **One-click download** | Stream any backup through Odoo (works with a private MinIO), or hand out a short-lived signed link. |
 | 🧾 **Verified** | SHA-256 of every file, stored in Odoo and in the object metadata. Multipart uploads for big filestores. |
 | 🔔 **Loud when it fails** | A red mark on the timeline and a message on the destination, emailed to its followers. |
-| 🇮🇷 **Persian ready** | Full Persian translation, right-to-left UI and Jalali dates; pair it with [Vesta Font](https://github.com/vestaai-ir/vesta-l10n-iran) for a proper Persian typeface (used in these screenshots). |
+| 🇮🇷 **Persian ready** | Full Persian translation, right-to-left UI and Jalali dates; pair it with [Vesta Font](https://github.com/vestaai-ir/vesta-font) for a proper Persian typeface (used in these screenshots). |
 
 <table>
   <tr>
@@ -178,7 +178,7 @@ DigitalOcean یا هر فضای سازگار با S3 دیگر، یا دیسک ه
 - ⬇️ **دانلود با یک کلیک**: از طریق خود اودو (حتی برای MinIO داخلی) یا با لینک امضاشده‌ی موقت.
 - 🧾 **چک‌سام SHA-256** برای هر فایل و آپلود چندبخشی برای فایل‌های بزرگ.
 - 🔔 **هشدار خطا**: علامت قرمز روی نوار وضعیت و پیام روی مقصد که برای دنبال‌کنندگان ایمیل می‌شود.
-- 🇮🇷 **کاملاً فارسی**: ترجمه‌ی کامل، رابط راست‌به‌چپ و تاریخ شمسی؛ با [فونت وستا](https://github.com/vestaai-ir/vesta-l10n-iran) قلم فارسی هم زیبا می‌شود (همین تصاویر با فونت ایران‌یکان).
+- 🇮🇷 **کاملاً فارسی**: ترجمه‌ی کامل، رابط راست‌به‌چپ و تاریخ شمسی؛ با [فونت وستا](https://github.com/vestaai-ir/vesta-font) قلم فارسی هم زیبا می‌شود (همین تصاویر با فونت ایران‌یکان).
 
 <table>
   <tr>
@@ -211,7 +211,7 @@ DigitalOcean یا هر فضای سازگار با S3 دیگر، یا دیسک ه
 ### More from Vesta AI · محصولات دیگر وستا
 
 - [Vesta Gateway](https://github.com/vestaai-ir/vesta-payment-iran): Iranian bank payment gateways for Odoo 20 · درگاه پرداخت بانک‌های ایرانی
-- [Vesta Font](https://github.com/vestaai-ir/vesta-l10n-iran): Persian fonts for the backend, website, PDF reports and POS · فونت فارسی برای همه‌ی اودو
+- [Vesta Font](https://github.com/vestaai-ir/vesta-font): Persian fonts for the backend, website, PDF reports and POS · فونت فارسی برای همه‌ی اودو
 
 ⭐ If Vesta Backup saved your day, star the repository so others find it. · اگر به کارتان آمد، به مخزن ستاره بدهید.
 
